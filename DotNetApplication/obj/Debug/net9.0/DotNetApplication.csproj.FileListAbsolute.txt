@@ -34,3 +34,8 @@ C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\obj\Debug\net9.0\ref\D
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\obj\Debug\net9.0\DotNetApplication.sourcelink.json
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
