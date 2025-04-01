@@ -1,0 +1,17 @@
+openapi: 3.1.0
+info:
+  title: My app
+  description: My app
+  version: 1.0.0
+servers:
+  - url: 'http'
+paths:
+  /weatherforecast:
+    get:
+      description: New endpoint
+      responses:
+        200:
+          description: New response
+          content:
+            application/json:
+  
