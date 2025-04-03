@@ -14,10 +14,11 @@ public class Repository<T> : IRepository<T> where T : class
     public Repository(ApplicationDbContext context)
     {
         _context = context;
+        //_context.VillaNumbers.Include(v => v.Villa).ToList();
         this.DbSet = _context.Set<T>();
     }
     
-    public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null)
+    public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
     {
         IQueryable<T> query = DbSet;
 
@@ -26,10 +27,19 @@ public class Repository<T> : IRepository<T> where T : class
             query = query.Where(filter);
         }
 
+        if (includeProperties != null)
+        {
+            foreach (string includeProperty in includeProperties.Split(new char[] { ',' },
+                         StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+        }
+        
         return await query.ToListAsync();
     }
 
-    public async Task<T> GetAsync(Expression<Func<T, bool>> filter = null, bool tracking = true)
+    public async Task<T> GetAsync(Expression<Func<T, bool>> filter = null, bool tracking = true, string? includeProperties = null)
     {
         IQueryable<T> query = DbSet;
 
@@ -43,6 +53,15 @@ public class Repository<T> : IRepository<T> where T : class
             query = query.Where(filter);
         }
 
+        if (includeProperties != null)
+        {
+            foreach (string includeProperty in includeProperties.Split(new char[] { ',' },
+                         StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+        }
+        
         return await query.FirstOrDefaultAsync();
     }
 

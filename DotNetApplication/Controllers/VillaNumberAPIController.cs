@@ -38,7 +38,7 @@ public class VillaNumberAPIController : ControllerBase
     {
         try
         {
-            IEnumerable<VillaNumber> villasNumber = await _villaNumberRepository.GetAllAsync();
+            IEnumerable<VillaNumber> villasNumber = await _villaNumberRepository.GetAllAsync(includeProperties:"Villa");
             _response.Result = _mapper.Map<List<VillaNumberDTO>>(villasNumber);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
@@ -95,13 +95,13 @@ public class VillaNumberAPIController : ControllerBase
         {
             if (await _villaNumberRepository.GetAsync(v => v.VillaNo == createVillaNumberDTO.VillaNo) != null)
             {
-                ModelState.AddModelError("CustomError", "Villa Number already exists");
+                ModelState.AddModelError("ErrorMessages", "Villa Number already exists");
                 return BadRequest(ModelState);
             }
 
-            if (await _villaRepository.GetAsync(v => v.Id == createVillaNumberDTO.VillaNo) == null)
+            if (await _villaRepository.GetAsync(v => v.Id == createVillaNumberDTO.VillaId) == null)
             {
-                ModelState.AddModelError("CustomError", "Villa Id is invalid");
+                ModelState.AddModelError("ErrorMessages", "Villa Id is invalid");
                 return BadRequest(ModelState);
             }
             
@@ -177,9 +177,9 @@ public class VillaNumberAPIController : ControllerBase
                 return BadRequest(_response);
             }
 
-            if (await _villaRepository.GetAsync(v => v.Id == updateVillaNumberDTO.VillaNo) == null)
+            if (await _villaRepository.GetAsync(v => v.Id == updateVillaNumberDTO.VillaId) == null)
             {
-                ModelState.AddModelError("CustomError", "Villa Id is invalid");
+                ModelState.AddModelError("ErrorMessages", "Villa Id is invalid");
                 return BadRequest(ModelState);
             }
             

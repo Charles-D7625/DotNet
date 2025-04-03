@@ -1,7 +1,5 @@
 using DotNetApplication;
 using DotNetApplication.Data;
-using DotNetApplication.Logging;
-using DotNetApplication.Models;
 using DotNetApplication.Repository;
 using DotNetApplication.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;

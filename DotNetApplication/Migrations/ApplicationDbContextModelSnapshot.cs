@@ -31,18 +31,15 @@ namespace DotNetApplication.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Amenity")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Details")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -70,7 +67,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 256, DateTimeKind.Local).AddTicks(7721),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 180, DateTimeKind.Local).AddTicks(386),
                             Details = "Cool villa",
                             ImageUrl = "",
                             Name = "Villa1",
@@ -83,7 +80,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 2,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 258, DateTimeKind.Local).AddTicks(3),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 182, DateTimeKind.Local).AddTicks(3754),
                             Details = "Coolest villa",
                             ImageUrl = "",
                             Name = "Villa2",
@@ -96,7 +93,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 3,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 258, DateTimeKind.Local).AddTicks(16),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 182, DateTimeKind.Local).AddTicks(3770),
                             Details = "Damn cool villa",
                             ImageUrl = "",
                             Name = "Villa3",
@@ -109,7 +106,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 4,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 258, DateTimeKind.Local).AddTicks(18),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 182, DateTimeKind.Local).AddTicks(3772),
                             Details = "So cool villa",
                             ImageUrl = "",
                             Name = "Villa4",
@@ -122,7 +119,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 5,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 258, DateTimeKind.Local).AddTicks(20),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 182, DateTimeKind.Local).AddTicks(3774),
                             Details = "Big villa",
                             ImageUrl = "",
                             Name = "Villa5",
@@ -135,7 +132,7 @@ namespace DotNetApplication.Migrations
                         {
                             Id = 6,
                             Amenity = "",
-                            CreatedDate = new DateTime(2025, 4, 2, 14, 54, 6, 258, DateTimeKind.Local).AddTicks(22),
+                            CreatedDate = new DateTime(2025, 4, 2, 18, 26, 3, 182, DateTimeKind.Local).AddTicks(3775),
                             Details = "Very big villa",
                             ImageUrl = "",
                             Name = "Villa6",
@@ -155,7 +152,6 @@ namespace DotNetApplication.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SpecialDetails")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedDate")
