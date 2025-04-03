@@ -170,3 +170,4 @@ C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\runti
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

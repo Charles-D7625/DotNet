@@ -7,6 +7,7 @@ using DotNetApplication.Data;
 using DotNetApplication.Logging;
 using DotNetApplication.Repository;
 using DotNetApplication.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ public class VillaAPIController : ControllerBase
     }
     
     [HttpGet]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<APIResponse>> GetVillas()
     {
@@ -81,6 +83,7 @@ public class VillaAPIController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "admin")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -118,6 +121,7 @@ public class VillaAPIController : ControllerBase
     }
 
     [HttpDelete("{id:int}", Name = "DeleteVilla")]
+    [Authorize(Roles = "CUSTOM")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
