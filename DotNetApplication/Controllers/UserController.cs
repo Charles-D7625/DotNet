@@ -1,4 +1,5 @@
 using System.Net;
+using Asp.Versioning;
 using DotNetApplication.Models;
 using DotNetApplication.Models.Dto;
 using DotNetApplication.Repository.IRepository;
@@ -6,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetApplication.Controllers;
 
-[Route("api/UsersAuth")]
-[ApiController]
+[Route("api/v{version:apiVersion}/UsersAuth")]
+[ApiVersionNeutral]
 public class UserController : Controller
 {
     private readonly IUserRepository _userRepository;

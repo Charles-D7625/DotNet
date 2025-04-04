@@ -32,13 +32,7 @@ public class VillaNumberController : Controller
         {
             list = JsonConvert.DeserializeObject<List<VillaNumberDTO>>(Convert.ToString(response.Result));
         }
-        else
-        {
-            if (response.ErrorMessages.Count > 0)
-            {
-                ModelState.AddModelError("ErrorMessages", response.ErrorMessages.FirstOrDefault());
-            }
-        }
+        
         return View(list);
     }
     

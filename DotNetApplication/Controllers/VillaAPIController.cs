@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotNetApplication.Controllers;
 
-[Route("api/VillaAPI")]
+[Route("api/v{version:apiVersion}/VillaAPI")]
 [ApiController]
 public class VillaAPIController : ControllerBase
 {
