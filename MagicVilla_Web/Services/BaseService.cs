@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Text;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Services.IServices;
@@ -48,6 +49,11 @@ public class BaseService : IBaseService
             }
 
             HttpResponseMessage apiResponse = await client.SendAsync(message);
+
+            if (!string.IsNullOrEmpty(apiRequest.Token))
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiRequest.Token);
+            }
             
             var apiContent = await apiResponse.Content.ReadAsStringAsync();
             try

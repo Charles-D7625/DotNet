@@ -29,7 +29,6 @@ public class VillaAPIController : ControllerBase
     }
     
     [HttpGet]
-    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<APIResponse>> GetVillas()
     {
@@ -121,7 +120,7 @@ public class VillaAPIController : ControllerBase
     }
 
     [HttpDelete("{id:int}", Name = "DeleteVilla")]
-    [Authorize(Roles = "CUSTOM")]
+    [Authorize(Roles = "admin")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

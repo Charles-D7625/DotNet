@@ -9,4 +9,6 @@ public static class SD
         DELETE,
         PUT
     }
+    
+    public static string SessionToken = "JWTToken";
 }
