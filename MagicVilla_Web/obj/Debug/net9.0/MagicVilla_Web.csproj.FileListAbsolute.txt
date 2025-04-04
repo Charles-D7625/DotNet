@@ -103,3 +103,11 @@ C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\obj\Debug\net9.0\MagicVil
 C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\obj\Debug\net9.0\MagicVilla_Web.genruntimeconfig.cache
 C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\obj\Debug\net9.0\ref\MagicVilla_Web.dll
 C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\obj\Debug\net9.0\compressed\508b158x1n-xjviii03pa.gz
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Backend\Desktop\project\DotNet\MagicVilla_Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll

@@ -175,3 +175,8 @@ C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Asp.V
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Asp.Versioning.Http.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Asp.Versioning.Mvc.dll
 C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Backend\Desktop\project\DotNet\DotNetApplication\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll

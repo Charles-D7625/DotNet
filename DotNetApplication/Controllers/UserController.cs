@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetApplication.Controllers;
 
-[Route("api/v{version:apiVersion}/UsersAuth")]
-[ApiVersionNeutral]
+[Route("api/UsersAuth")]
 public class UserController : Controller
 {
     private readonly IUserRepository _userRepository;
@@ -57,7 +56,8 @@ public class UserController : Controller
             _response.ErrorMessages.Add("Error while registering");
             return BadRequest(_response);
         }
-        
+        _response.StatusCode = HttpStatusCode.OK;
+        _response.IsSuccessStatusCode = true;
         return Ok(_response);
     }
 }
