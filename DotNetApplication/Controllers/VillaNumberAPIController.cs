@@ -72,6 +72,7 @@ public class VillaNumberAPIController : ControllerBase
             if (villaNumber == null)
             {
                 _response.StatusCode = HttpStatusCode.NotFound;
+                _response.IsSuccessStatusCode = false;
                 return NotFound(_response);
             }
 

@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text.Json;
 using AutoMapper;
 using DotNetApplication.Models;
 using DotNetApplication.Models.Dto;
@@ -29,12 +30,34 @@ public class VillaAPIController : ControllerBase
     }
     
     [HttpGet]
+    [ResponseCache(Duration = 60)]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<APIResponse>> GetVillas()
+    public async Task<ActionResult<APIResponse>> GetVillas([FromQuery]int? occupancy, [FromQuery]string? search, int pageSize = 0, int pageNumber = 1)
     {
         try
         {
-            IEnumerable<Villa> villas = await _villaRepository.GetAllAsync();
+            IEnumerable<Villa> villas;
+            if (occupancy > 0)
+            {
+                villas = await _villaRepository.GetAllAsync(v => v.Occupancy == occupancy, pageSize:pageSize, pageNumber:pageNumber);
+            }
+            else
+            {
+                villas = await _villaRepository.GetAllAsync(pageSize:pageSize, pageNumber:pageNumber);
+            }
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                villas = villas.Where(v => v.Name.ToLower().Contains(search));
+            }
+
+            Pagination pagination = new()
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagination));
+            
             _response.Result = _mapper.Map<List<VillaDTO>>(villas);
             _response.StatusCode = HttpStatusCode.OK;
             return Ok(_response);
@@ -48,6 +71,7 @@ public class VillaAPIController : ControllerBase
     }
     
     [HttpGet("{id:int}", Name = "GetVilla")]
+    [ResponseCache(CacheProfileName = "Default60")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -66,6 +90,7 @@ public class VillaAPIController : ControllerBase
             if (villa == null)
             {
                 _response.StatusCode = HttpStatusCode.NotFound;
+                _response.IsSuccessStatusCode = false;
                 return NotFound(_response);
             }
 

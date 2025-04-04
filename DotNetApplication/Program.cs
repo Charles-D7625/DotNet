@@ -6,6 +6,7 @@ using DotNetApplication.Repository;
 using DotNetApplication.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
 });
+builder.Services.AddResponseCaching();
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IVillaRepository, VillaRepository>();
@@ -91,7 +93,15 @@ builder.Services.AddSwaggerGen(options =>
         TermsOfService = new Uri("https://example.com/terms"),
     });
 });
-builder.Services.AddControllers().AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
+builder.Services.AddControllers(option =>
+    {
+        option.CacheProfiles.Add("Default60",
+            new CacheProfile()
+            {
+                Duration = 60
+            });
+    })
+    .AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
